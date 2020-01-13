@@ -8,7 +8,7 @@ export default class Navbar extends Component {
           <div className="flex items-center flex-shrink-0 text-white mr-6">
             <img
               className="flex w-16 h-10 mr-6 cursor-pointer"
-              src="/bcg_logo.png"
+              src="../images/bcg_logo.png"
             />
             <span className="font-semibold text-xl tracking-tight">
               Bhilai Custom Gifts
