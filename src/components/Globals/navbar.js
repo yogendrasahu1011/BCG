@@ -1,11 +1,18 @@
 import React, { Component } from "react"
 import logo from "../../images/bcg_logo.png"
 import { Link } from "gatsby"
+import "bootstrap/dist/css/bootstrap.css"
+import { FaCartArrowDown } from "react-icons/fa"
 export default class Navbar extends Component {
   state = {
     navbarOpen: false,
+    css: "collapse navbar-collapse ",
     links: [
-      { id: 1, path: "/", text: "home" },
+      {
+        id: 1,
+        path: "/",
+        text: "home",
+      },
       {
         id: 2,
         path: "/about",
@@ -13,51 +20,48 @@ export default class Navbar extends Component {
       },
     ],
   }
-  navBarHandler = () => {
-    console.log("hello")
+  navbarHandler = () => {
+    this.state.navbarOpen
+      ? this.setState({ navbarOpen: false, css: "collapse navbar-collapse" })
+      : this.setState({
+          navbarOpen: true,
+          css: "collapse navbar-collapse show",
+        })
   }
   render() {
     return (
-      <div>
-        <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-          <div className="flex items-center flex-shrink-0 text-white mr-6">
-            <img className="flex w-16 h-10 mr-6 cursor-pointer" src={logo} />
-            <Link to="/" className="font-semibold text-xl tracking-tight">
-              Bhilai Custom Gifts
-            </Link>
-          </div>
-          <div className="block lg:hidden">
-            <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-              <svg
-                className="fill-current h-3 w-3"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-              </svg>
-            </button>
-          </div>
-          <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div className="text-sm lg:flex-grow">
-              <Link
-                to="/about"
-                className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-              >
-                About
-              </Link>
-            </div>
-            <div>
-              <a
-                href="#"
-                className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-              >
-                Button
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
+      <nav className="navbar navbar-expand-sm bg-light navbar-light">
+        <Link to="/" className="navbar-brand">
+          <img
+            className="flex w-16 h-10 mr-6 cursor-pointer"
+            src={logo}
+            alt="logo"
+          />
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={this.navbarHandler}
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
+        <div className={this.state.css}>
+          <ul className="navbar-nav mx-auto">
+            {this.state.links.map(link => {
+              return (
+                <li key={link.id} className="nav-item">
+                  <Link to={link.path} className="nav-link text-capitalize">
+                    {link.text}
+                  </Link>
+                </li>
+              )
+            })}
+            <li className="nav-item ml-sm-5">
+              <FaCartArrowDown className="cart-icon" />
+            </li>
+          </ul>
+        </div>
+      </nav>
     )
   }
 }
