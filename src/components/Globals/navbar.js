@@ -1,18 +1,30 @@
 import React, { Component } from "react"
-
+import logo from "../../images/bcg_logo.png"
+import { Link } from "gatsby"
 export default class Navbar extends Component {
+  state = {
+    navbarOpen: false,
+    links: [
+      { id: 1, path: "/", text: "home" },
+      {
+        id: 2,
+        path: "/about",
+        text: "about",
+      },
+    ],
+  }
+  navBarHandler = () => {
+    console.log("hello")
+  }
   render() {
     return (
       <div>
         <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
           <div className="flex items-center flex-shrink-0 text-white mr-6">
-            <img
-              className="flex w-16 h-10 mr-6 cursor-pointer"
-              src="../images/bcg_logo.png"
-            />
-            <span className="font-semibold text-xl tracking-tight">
+            <img className="flex w-16 h-10 mr-6 cursor-pointer" src={logo} />
+            <Link to="/" className="font-semibold text-xl tracking-tight">
               Bhilai Custom Gifts
-            </span>
+            </Link>
           </div>
           <div className="block lg:hidden">
             <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -28,24 +40,12 @@ export default class Navbar extends Component {
           </div>
           <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
             <div className="text-sm lg:flex-grow">
-              <a
-                href="#responsive-header"
+              <Link
+                to="/about"
                 className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
               >
-                Docs
-              </a>
-              <a
-                href="#responsive-header"
-                className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-              >
-                Examples
-              </a>
-              <a
-                href="#responsive-header"
-                className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
-              >
-                Blog
-              </a>
+                About
+              </Link>
             </div>
             <div>
               <a
