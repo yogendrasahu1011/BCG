@@ -4,7 +4,7 @@ const About = () => (
   <Layout>
     <h1 className="text-2xl text-teal-400">About</h1>
     <p>Welcome to your new Gatsby site.</p>
-    <form name="contact" method="POST" data-netlify="true" action="POST">
+    <form name="contact" method="POST" data-netlify="true" action="/success">
       <p>
         <label>
           Your Name: <input type="text" name="name" />
@@ -32,6 +32,9 @@ const About = () => (
       <p>
         <button type="submit">Send</button>
       </p>
+      <div className="field">
+        <div data-netlify-recaptcha="true"></div>
+      </div>
     </form>
   </Layout>
 )
