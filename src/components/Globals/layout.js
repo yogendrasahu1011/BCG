@@ -15,7 +15,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="container bg-gray-100">
       <Navbar />
       {children}
     </div>
