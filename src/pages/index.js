@@ -3,7 +3,7 @@ import Layout from "../components/Globals/layout.js"
 import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
 import BackgroundSection from "../components/Globals/BackgroundSection"
-const IndexPage = ({ data }) => (
+const Index = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <BackgroundSection
@@ -19,11 +19,11 @@ export const query = graphql`
     img: file(relativePath: { eq: "background.jpg" }) {
       childImageSharp {
         fluid {
-          ...GastbyImageSharpFluid_tracedSVG
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
   }
 `
 
-export default IndexPage
+export default Index
