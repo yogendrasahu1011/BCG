@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Navbar from "./navbar"
+import Footer from "./Footer"
 import "../../../src/style.css"
 import "../../bootstrap.min.css"
 import "./layout.css"
@@ -18,6 +19,7 @@ const Layout = ({ children }) => {
     <div className="container bg-gray-100">
       <Navbar />
       {children}
+      <Footer />
     </div>
   )
 }

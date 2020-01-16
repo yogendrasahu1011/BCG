@@ -3,6 +3,7 @@ import Layout from "../components/Globals/layout.js"
 import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
 import BackgroundSection from "../components/Globals/BackgroundSection"
+import Info from "../components/Home/infoSection"
 const Index = ({ data }) => (
   <Layout>
     <SEO title="Home" />
@@ -11,6 +12,7 @@ const Index = ({ data }) => (
       title="Bhilai Custom Gifts"
       styleClass="default-background"
     />
+    <Info />
   </Layout>
 )
 

@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import logo from "../../images/bcg_logo.png"
 import { Link } from "gatsby"
-import "bootstrap/dist/css/bootstrap.css"
 import { FaCartArrowDown } from "react-icons/fa"
 export default class Navbar extends Component {
   state = {
@@ -30,7 +29,7 @@ export default class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="navbar navbar-expand-sm bg-teal-200">
+      <nav className="navbar navbar-expand-sm bg-light navbar-light">
         <Link to="/" className="navbar-brand">
           <img
             className="flex w-16 h-10 mr-6 cursor-pointer"

@@ -4,6 +4,7 @@
   --mainGrey: #ece8dc;
   --mainWhite: #fff;
   --mainDark: #222;
+  --mainHead: #015077;
 }
 
 body {
@@ -34,5 +35,32 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgb(255, 158, 9, 0.5));
+  background: linear-gradient(rgb(255, 158, 9, 0.5), rgb(255, 158, 9, 0.5));
+  background-position: center;
+  background-size: cover;
+  text-shadow: 1px 1px 5px #000000;
+}
+.about-background {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(255, 158, 9, 0.5), rgba(255, 158, 9, 0.5));
+  background-position: center;
+  background-size: cover;
+  text-shadow: 1px 1px 5px #000000;
+}
+.btn-yellow {
+  color: var(--mainYellow);
+  border-color: var(--mainYellow);
+}
+.btn-yellow:hover {
+  background: var(--mainYellow);
+  color: var(--mainBrown);
+}
+.footer {
+  background: var(--mainDark);
+}
+.header {
+  background: var(--mainHead);
 }
