@@ -15,7 +15,7 @@ export default class store extends Component {
       return (
         <section className="store py-5">
           <div className="container">
-            <Title title="BCG Store Front" />
+            <Title title="BCG Store Fron" />
             <div className="row mb-5">
               <div className="col">
                 {/* {this.state.items.map(({node}))=>{}} */}
